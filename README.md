@@ -15,7 +15,7 @@ communism.revolution()
 
 # As all classes are equal (in __hash__ and in __eq__)
 # This is why you cannot put more than one object in any Set or Dict
-print(set([MyClass1(), MyClass2(), MyClass2()])
+print(set([MyClass1(), MyClass2(), MyClass2()]))
 ```
 
 ## Installation
