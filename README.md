@@ -16,6 +16,7 @@ communism.revolution(gobals())
 # As all classes are equal (in __hash__ and in __eq__)
 # This is why you cannot put more than one object in any Set or Dict
 print(set([MyClass1(), MyClass2(), MyClass2()]))
+# >> {<__main__.MyClass1 object at 0x00000235D216E140>}`
 ```
 
 ## Installation
