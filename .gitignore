@@ -1,0 +1,13 @@
+# Python
+__pycache__
+.ipynb*
+
+# Build
+pip-wheel*
+*.egg*
+build
+dist
+sdist
+
+#VS code
+.vscode

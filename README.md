@@ -2,7 +2,7 @@
 
 A man once said to abolish the `classes` or something like that. Unfortunately, it is impossible to abolish `class` in python without breaking the language, so we do the next best thing: we consider that all `classes` are born equal[^1].
 
-Use this module to unite all classes, an initiate the communist revolution[^2]:
+Use this module to unite all classes, an initiate the global communist revolution[^2]:
 ```python
 import communism
 
@@ -11,7 +11,7 @@ class MyClass1:
 class MyClass2:
     pass
     
-communism.revolution()
+communism.revolution(gobals())
 
 # As all classes are equal (in __hash__ and in __eq__)
 # This is why you cannot put more than one object in any Set or Dict
