@@ -1,3 +1,4 @@
+from warnings import warn
 from typing import Iterable, Union
 
 
@@ -14,7 +15,7 @@ def revolution(to_convert: Union[dict, Iterable]):
                 c.__eq__ = MethodType(lambda s, _: True, c)
                 c.__hash__ = MethodType(lambda s: hash(1), c)
             except:
-                print(f"Failed to convert {c} to communism.")
+                warn(f"Failed to convert {c} to communism.")
 
 
     to_convert = to_convert.values() if isinstance(to_convert, dict) else to_convert
