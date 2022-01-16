@@ -13,8 +13,7 @@ def _election(pigs):
     and only pigs have access to it.
     """
 
-    count = len(pigs)
-    party = random.choices(pigs, k=min(10, count))
+    party = random.choices(pigs, k=min(10, len(pigs)))
     leader = random.choice(party)
     party.remove(leader)
     print('Glorious election has been held with huge amount of participation (99.3%).',
