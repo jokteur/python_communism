@@ -1,5 +1,24 @@
+import random
+
 from warnings import warn
 from typing import Iterable, Union
+
+
+def _election(pigs):
+    """
+    this method will perform an election after each revolution.
+
+    *note:*
+    as this is a communist module, the election is protected
+    and only pigs have access to it.
+    """
+
+    party = random.choices(pigs, k=min(10, len(pigs)))
+    leader = random.choice(party)
+    party.remove(leader)
+    print('Glorious election has been held with huge amount of participation (99.3%).',
+          '\nSecretary General of the Party:', leader,
+          "\nPeople's representatives:", party)
 
 
 def revolution(to_convert: Union[dict, Iterable]):
@@ -17,7 +36,6 @@ def revolution(to_convert: Union[dict, Iterable]):
             except:
                 warn(f"Failed to convert {c} to communism.")
 
-
     to_convert = to_convert.values() if isinstance(to_convert, dict) else to_convert
     for m in to_convert:
         if inspect.ismodule(m):
@@ -25,3 +43,5 @@ def revolution(to_convert: Union[dict, Iterable]):
                 convert(c)
         else:
             convert(m)
+
+    _election(__PythonIntrinsicGlobalStructures__)
