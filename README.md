@@ -21,7 +21,12 @@ print(set([OurClass1(), OurClass2(), OurClass2()]))
 
 ## Installation
 
-Clone this git, `pip install .` where the git has been cloned, and you will have access to communism.
+In our terminal:
+* `git clone https://github.com/jokteur/python_communism.git`
+* `cd python_communism/`
+* `pip install .`
+
+Now you have access to communism!
 
 [^1]: Well, not all classes are born equal. It is not possible to do a complete communist revolution without breaking the language. This is why there are elites (like the `__builtins__`) which are more equal than all of the others.
 

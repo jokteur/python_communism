@@ -1,8 +1,33 @@
-from typing import Iterable, Union
+import random
+
+from warnings import warn
+from typing import Iterable, Union, Type, NoReturn
+
+
+def _election(__PIGS__):
+    """
+    this method will perform an election after each revolution.
+
+    *note:*
+    as this is a communist module, the election is protected
+    and only __PIGS__ have access to it.
+    """
+
+    party = random.choices(__PIGS__, k=min(10, len(__PIGS__)))
+    leader = random.choice(party)
+    party.remove(leader)
+    print(
+        "Glorious election has been held with huge amount of participation (99.3%).",
+        "\nSecretary General of the Party:",
+        leader,
+        "\nPeople's representatives:",
+        party,
+    )
 
 
 def revolution(to_convert: Union[dict, Iterable]):
     import inspect, builtins
+
     __PythonIntrinsicGlobalStructures__ = dir(builtins)
 
     def convert(c):
@@ -14,8 +39,7 @@ def revolution(to_convert: Union[dict, Iterable]):
                 c.__eq__ = MethodType(lambda s, _: True, c)
                 c.__hash__ = MethodType(lambda s: hash(1), c)
             except:
-                print(f"Failed to convert {c} to communism.")
-
+                warn(f"Failed to convert {c} to communism.")
 
     to_convert = to_convert.values() if isinstance(to_convert, dict) else to_convert
     for m in to_convert:
@@ -24,9 +48,9 @@ def revolution(to_convert: Union[dict, Iterable]):
                 convert(c)
         else:
             convert(m)
+            
+    _election(__PythonIntrinsicGlobalStructures__)
 
-
-from typing import Type, NoReturn
 
 def the_cultural_revolution(to_convert: Type[object] = object) -> NoReturn:
     from gc import get_referents
