@@ -11,3 +11,6 @@ sdist
 
 #VS code
 .vscode
+venv
+Python_Communism.egg-info
+.gitignore
