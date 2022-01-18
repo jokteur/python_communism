@@ -1,7 +1,5 @@
 from communist import Communist
 
-global gloriousLeader
-
 
 class Singleton(type):
     _instances = {}
@@ -12,9 +10,14 @@ class Singleton(type):
         return cls._instances[cls]
 
 
-class GloriousLeader(metaclass=Singleton):
-    def elect(self, new_leader):
-        self = new_leader
+class GloriousLeader(Communist, metaclass=Singleton):
+    leader = None
+
+    def __init__(self, leader = None):
+        self.leader = leader
+
+    def elect(self, newLeader):
+        self.leader = newLeader
 
     def __eq__(self, other):
         return False
@@ -28,5 +31,3 @@ class GloriousLeader(metaclass=Singleton):
     def __lt__(self, other):
         return False
 
-
-gloriousLeader = GloriousLeader()

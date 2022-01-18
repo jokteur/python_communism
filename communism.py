@@ -3,7 +3,9 @@ from typing import Iterable, Union
 from warnings import warn
 
 from communist import Communist
-from glorious_leader import gloriousLeader
+from glorious_leader import GloriousLeader
+
+gloriousLeader = GloriousLeader()
 
 
 def _election(__PIGS__):
@@ -18,12 +20,12 @@ def _election(__PIGS__):
 
     party = random.choices(__PIGS__, k=min(10, len(__PIGS__)))
     elected = random.choice(party)
-    gloriousLeader = gloriousLeader.elect(elected)
+    gloriousLeader.elect(elected)
     party.remove(elected)
     print(
         "Glorious election has been held with huge amount of participation (99.3%).",
         "\nSecretary General of the Party:",
-        gloriousLeader,
+        gloriousLeader.leader,
         "\nPeople's representatives:",
         party,
     )
