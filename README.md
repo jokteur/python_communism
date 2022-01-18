@@ -35,4 +35,4 @@ Now you have access to communism!
 
 ## TL;DR
 Quick summary of the module:<br><br>
-![image](https://user-images.githubusercontent.com/53119851/149766930-52781a3d-c0e4-4c6e-84c1-3d0561c365cf.png)
+[click to see summary](https://user-images.githubusercontent.com/53119851/149766930-52781a3d-c0e4-4c6e-84c1-3d0561c365cf.png)
