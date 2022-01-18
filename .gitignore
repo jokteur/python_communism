@@ -9,5 +9,11 @@ build
 dist
 sdist
 
+# Virtual Env
+venv
+
 #VS code
 .vscode
+
+# Intellij
+.idea

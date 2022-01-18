@@ -1,10 +1,13 @@
 import random
-
-from warnings import warn
 from typing import Iterable, Union
+from warnings import warn
+
+from communist import Communist
+from glorious_leader import gloriousLeader
 
 
 def _election(__PIGS__):
+    global gloriousLeader
     """
     this method will perform an election after each revolution.
 
@@ -14,12 +17,13 @@ def _election(__PIGS__):
     """
 
     party = random.choices(__PIGS__, k=min(10, len(__PIGS__)))
-    leader = random.choice(party)
-    party.remove(leader)
+    elected = random.choice(party)
+    gloriousLeader = gloriousLeader.elect(elected)
+    party.remove(elected)
     print(
         "Glorious election has been held with huge amount of participation (99.3%).",
         "\nSecretary General of the Party:",
-        leader,
+        gloriousLeader,
         "\nPeople's representatives:",
         party,
     )
@@ -34,12 +38,18 @@ def revolution(to_convert: Union[dict, Iterable]):
         from types import MethodType
 
         # We must protect the builtin elite to not be affected by the revolution
-        if inspect.isclass(c) and c.__name__ not in __PythonIntrinsicGlobalStructures__:
+        if inspect.isclass(c) and is_not_elite(c) and is_not_comrade(c):
             try:
                 c.__eq__ = MethodType(lambda s, _: True, c)
                 c.__hash__ = MethodType(lambda s: hash(1), c)
             except:
                 warn(f"Failed to convert {c} to communism.")
+
+    def is_not_elite(c):
+        return c.__name__ not in __PythonIntrinsicGlobalStructures__
+
+    def is_not_comrade(c):
+        return type(c) is not Communist
 
     to_convert = to_convert.values() if isinstance(to_convert, dict) else to_convert
     for m in to_convert:

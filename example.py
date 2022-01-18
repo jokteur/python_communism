@@ -1,7 +1,8 @@
 import communism
+from communist import Communist
 
 
-class MyClass1:
+class MyClass1(Communist):
     pass
 
 
